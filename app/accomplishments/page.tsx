@@ -104,7 +104,6 @@ const GOVERNANCE = [
   "Leadership stability — no superintendent turnover, and steady governance through a turbulent post-COVID period.",
   "Stood with teachers — passed a resolution to keep the FWEA curriculum partnership after the state removed the mandate (2023).",
   "Handled the South Wayne High School closure with a community legacy celebration — a hard consolidation done with respect.",
-  "Ran COVID vaccination sites at four elementary schools in 2021–22, keeping the community served during the crisis.",
 ];
 
 function RecordList({ items }: { items: string[] }) {
