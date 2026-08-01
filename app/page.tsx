@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CONTACT_EMAIL, Rule } from "@/components/site-chrome";
+import { JoinCta, PrimaryCta, Rule } from "@/components/site-chrome";
 
 const STATS = [
   { c: "var(--green)", n: "2021", l: "Serving FWCS families since" },
@@ -69,9 +69,7 @@ export default function Home() {
               of our district.
             </p>
             <div className="cta-row">
-              <a className="btn" href={`mailto:${CONTACT_EMAIL}`}>
-                Join the Campaign
-              </a>
+              <PrimaryCta />
               <Link className="btn btn-ghost" href="/accomplishments">
                 See the Record
               </Link>
@@ -223,9 +221,8 @@ export default function Home() {
             className="cta-row"
             style={{ justifyContent: "center", marginTop: 0 }}
           >
-            <a className="btn" href={`mailto:${CONTACT_EMAIL}`}>
-              Join the Campaign
-            </a>
+            <PrimaryCta />
+            <JoinCta />
             <Link className="btn btn-ghost" href="/snider">
               Snider&rsquo;s New Stadium
             </Link>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CONTACT_EMAIL, Rule } from "@/components/site-chrome";
+import { JoinCta, PrimaryCta, Rule } from "@/components/site-chrome";
 
 export const metadata: Metadata = {
   title: "Snider Stadium — Home At Last",
@@ -233,9 +233,8 @@ export default function SniderPage() {
             className="cta-row"
             style={{ justifyContent: "center", marginTop: 0 }}
           >
-            <a className="btn" href={`mailto:${CONTACT_EMAIL}`}>
-              Join the Campaign
-            </a>
+            <PrimaryCta />
+            <JoinCta />
           </div>
         </div>
       </section>
