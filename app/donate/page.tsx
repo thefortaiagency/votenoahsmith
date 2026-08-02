@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import {
+  AmountLadder,
   COMMITTEE,
   CONTACT_EMAIL,
   DONATE_URL,
+  GivingDisclaimer,
+  giveUrl,
   Rule,
 } from "@/components/site-chrome";
 
@@ -23,7 +26,7 @@ export const metadata: Metadata = {
  */
 export default function DonatePage() {
   if (DONATE_URL) {
-    redirect(DONATE_URL);
+    redirect(giveUrl({ source: "donate-page" }));
   }
 
   return (
@@ -36,9 +39,7 @@ export default function DonatePage() {
             <br />
             <em>FWCS kids</em>
           </h1>
-          <div className="hero-role">
-            Secure online giving opens this week
-          </div>
+          <div className="hero-role">Secure online giving opens this week</div>
           <p className="lede">
             Our secure donation page is being finalized right now. It will live
             at this exact address — bookmark it, and check back in a day or two.
@@ -55,6 +56,18 @@ export default function DonatePage() {
         <div className="shell">
           <Rule />
           <div className="section-head">
+            <div className="kicker">Choose an amount</div>
+            <h2>Every dollar goes to reaching FWCS families</h2>
+          </div>
+          <AmountLadder source="donate-page" />
+          <GivingDisclaimer />
+        </div>
+      </section>
+
+      <section className="tint">
+        <div className="shell">
+          <Rule />
+          <div className="section-head">
             <div className="kicker">Where it goes</div>
             <h2>Yard signs, mailers, and showing up</h2>
           </div>
@@ -66,15 +79,10 @@ export default function DonatePage() {
               FWCS families directly.
             </p>
             <p>
-              Want to give today, or give another way? Email{" "}
-              <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> and
+              Want to give another way, or have a question about a contribution?
+              Email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> and
               we&rsquo;ll take care of it.
             </p>
-          </div>
-          <div className="note" style={{ marginTop: 30 }}>
-            All contributions are made to <strong>{COMMITTEE}</strong>.
-            Contributions to a political campaign are not deductible as
-            charitable contributions for federal income tax purposes.
           </div>
         </div>
       </section>

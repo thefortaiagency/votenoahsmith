@@ -1,5 +1,11 @@
 import Link from "next/link";
-import { JoinCta, PrimaryCta, Rule } from "@/components/site-chrome";
+import {
+  AmountLadder,
+  GivingDisclaimer,
+  JoinCta,
+  PrimaryCta,
+  Rule,
+} from "@/components/site-chrome";
 
 const STATS = [
   { c: "var(--green)", n: "2021", l: "Serving FWCS families since" },
@@ -207,6 +213,22 @@ export default function Home() {
               </p>
             </article>
           </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="shell">
+          <Rule />
+          <div className="section-head">
+            <div className="kicker">Chip in</div>
+            <h2>Help keep this work going</h2>
+            <p>
+              School board races are won on the ground — yard signs, literature
+              at doors, and showing up at every forum in the district.
+            </p>
+          </div>
+          <AmountLadder source="home" />
+          <GivingDisclaimer />
         </div>
       </section>
 

@@ -522,6 +522,63 @@ section.tint {
   font-weight: 700;
 }
 
+/* ---------------- giving: the ask ladder ---------------- */
+
+.ladder-wrap {
+  margin-top: 30px;
+}
+.ladder {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.chip {
+  flex: 1 1 118px;
+  text-align: center;
+  padding: 20px 14px;
+  border-radius: 12px;
+  border: 2px solid var(--teal);
+  background: #fff;
+  color: var(--teal-ink);
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  transition: background 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+}
+a.chip:hover {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: #21160a;
+}
+.chip-other {
+  font-size: 17px;
+  letter-spacing: 0;
+}
+/* Pre-launch preview: visibly not a button yet. */
+.chip-idle {
+  border-color: var(--line);
+  border-style: dashed;
+  background: var(--wash);
+  color: #90a7b1;
+}
+.ladder-note {
+  margin: 16px 0 0;
+  font-size: 15px;
+  color: var(--muted);
+  max-width: 44em;
+}
+.give-legal {
+  margin: 22px 0 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 52em;
+}
+.give-legal strong {
+  color: var(--teal-ink);
+}
+
 /* ---------------- responsive ---------------- */
 
 @media (max-width: 900px) {
@@ -547,6 +604,11 @@ section.tint {
   .masthead nav a {
     padding: 6px 9px;
     font-size: 14px;
+  }
+  .chip {
+    flex-basis: calc(50% - 6px);
+    padding: 16px 10px;
+    font-size: 19px;
   }
   .stats {
     grid-template-columns: 1fr;

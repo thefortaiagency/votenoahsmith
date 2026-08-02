@@ -14,10 +14,106 @@ export const CONTACT_EMAIL = "nsfwcs3@gmail.com";
  * a payment form that does not exist yet. Paste the URL here and redeploy and
  * the whole flow turns on at once.
  */
-export const DONATE_URL = "";
+// Annotated `string` deliberately: without it TypeScript narrows the empty
+// literal to `never` inside the not-yet-live branches and the build fails.
+export const DONATE_URL: string = "";
 
 /** The clean, printable address. Forwards to Anedot once DONATE_URL is set. */
 export const DONATE_PATH = "/donate";
+
+/**
+ * The ask ladder. Anchoring works: the amounts a donor sees move what they
+ * give, so these are set deliberately rather than left to a default.
+ *
+ * Also set the same ladder inside the Anedot page builder. This constant is
+ * belt and braces — it rides along on every link as `amounts=`, so the buttons
+ * are right even if the dashboard is later edited by someone else.
+ */
+export const DONATION_AMOUNTS = [25, 50, 100, 250, 500];
+
+/**
+ * Build a link into Anedot. Verified against Anedot's URL-parameter docs:
+ *   amount   — prefills a single amount, whole dollars, no cents
+ *   amounts  — comma-separated list that sets the suggested buttons
+ *   sc       — source code, so Noah can see which part of the site earned it
+ *
+ * Returns "" when giving is not live yet; callers use that to render nothing.
+ */
+export function giveUrl(opts: { amount?: number; source?: string } = {}) {
+  if (!DONATE_URL) return "";
+  const q = new URLSearchParams();
+  q.set("amounts", DONATION_AMOUNTS.join(","));
+  if (opts.amount) q.set("amount", String(opts.amount));
+  q.set("sc", opts.source ?? "website");
+  return `${DONATE_URL}${DONATE_URL.includes("?") ? "&" : "?"}${q.toString()}`;
+}
+
+const usd = (n: number) => `$${n.toLocaleString("en-US")}`;
+
+/**
+ * The ask ladder, rendered. Once giving is live each chip drops the donor
+ * straight onto Anedot's card form with that amount already filled in.
+ *
+ * Before it is live the same chips render as flat, unclickable previews with
+ * an email fallback underneath — so the page is honest about not taking cards
+ * yet, and the ladder is still reviewable.
+ */
+export function AmountLadder({ source }: { source?: string }) {
+  const live = Boolean(DONATE_URL);
+  return (
+    <div className="ladder-wrap">
+      <div className="ladder">
+        {DONATION_AMOUNTS.map((amount) =>
+          live ? (
+            <a
+              key={amount}
+              className="chip"
+              href={giveUrl({ amount, source })}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {usd(amount)}
+            </a>
+          ) : (
+            <span key={amount} className="chip chip-idle">
+              {usd(amount)}
+            </span>
+          ),
+        )}
+        {live ? (
+          <a
+            className="chip chip-other"
+            href={giveUrl({ source })}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Other
+          </a>
+        ) : (
+          <span className="chip chip-idle chip-other">Other</span>
+        )}
+      </div>
+      {live ? null : (
+        <p className="ladder-note">
+          Card giving opens as soon as our processor finishes verifying the
+          committee. To give before then, email{" "}
+          <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+        </p>
+      )}
+    </div>
+  );
+}
+
+/** The contribution disclaimer that has to sit wherever money is asked for. */
+export function GivingDisclaimer() {
+  return (
+    <p className="give-legal">
+      All contributions are made to <strong>{COMMITTEE}</strong>. Contributions
+      to a political campaign are not deductible as charitable contributions for
+      federal income tax purposes.
+    </p>
+  );
+}
 
 /** The four-panel color bar lifted from the FWCS mark. */
 export function Panels() {
@@ -47,12 +143,12 @@ export function Rule() {
  * The orange slot. Donate owns it once giving is live; until then the ask is
  * to join the campaign, so the button is never dead.
  */
-export function PrimaryCta() {
+export function PrimaryCta({ source }: { source?: string } = {}) {
   if (DONATE_URL) {
     return (
       <a
         className="btn"
-        href={DONATE_URL}
+        href={giveUrl({ source: source ?? "cta" })}
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -95,7 +191,7 @@ export function SiteHeader() {
           {DONATE_URL ? (
             <a href={`mailto:${CONTACT_EMAIL}`}>Join the Campaign</a>
           ) : null}
-          <PrimaryCta />
+          <PrimaryCta source="nav" />
         </nav>
       </div>
       <Panels />
