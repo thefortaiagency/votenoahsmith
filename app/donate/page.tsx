@@ -40,11 +40,16 @@ export default function DonatePage() {
             <em>FWCS kids</em>
           </h1>
           {/*
-            ⛔ NO DATES IN THIS COPY. It said "this week" and "check back in a
-            day or two" and then sat unchanged for eight days, because bank
-            verification does not run on a schedule anyone here controls. A
-            countdown that lapses reads as a campaign that does not finish
-            things — the opposite of what this page is for.
+            ⛔ NO DATES, AND NO SPECIFIC STAGE, IN THIS COPY. It said "this
+            week" and "check back in a day or two" and then sat unchanged for
+            eight days, because processor approval does not run on a schedule
+            anyone here controls. A countdown that lapses reads as a campaign
+            that does not finish things — the opposite of what this page is for.
+
+            It then said "clearing its final bank verification," which was also
+            wrong: the account was still in application review, an earlier and
+            slower step. Naming a stage is the same trap as naming a date — it
+            goes stale silently. Say only what stays true.
 
             It also now converts instead of deferring: a visitor who came here
             to give is asked to give, today, by email. Telling a willing donor
@@ -52,10 +57,10 @@ export default function DonatePage() {
           */}
           <div className="hero-role">Secure online giving opens shortly</div>
           <p className="lede">
-            Our donation page is clearing its final bank verification. It will
-            live at this exact address, so bookmark it — and if you would like
-            to give before it opens, email us and we will take care of it right
-            away.
+            Our secure donation page is being set up with our payment
+            processor. It will live at this exact address, so bookmark it — and
+            if you would like to give before it opens, email us and we will take
+            care of it right away.
           </p>
           <div className="cta-row">
             <a className="btn" href={`mailto:${CONTACT_EMAIL}`}>
