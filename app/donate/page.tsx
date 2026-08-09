@@ -39,10 +39,23 @@ export default function DonatePage() {
             <br />
             <em>FWCS kids</em>
           </h1>
-          <div className="hero-role">Secure online giving opens this week</div>
+          {/*
+            ⛔ NO DATES IN THIS COPY. It said "this week" and "check back in a
+            day or two" and then sat unchanged for eight days, because bank
+            verification does not run on a schedule anyone here controls. A
+            countdown that lapses reads as a campaign that does not finish
+            things — the opposite of what this page is for.
+
+            It also now converts instead of deferring: a visitor who came here
+            to give is asked to give, today, by email. Telling a willing donor
+            to come back later loses most of them.
+          */}
+          <div className="hero-role">Secure online giving opens shortly</div>
           <p className="lede">
-            Our secure donation page is being finalized right now. It will live
-            at this exact address — bookmark it, and check back in a day or two.
+            Our donation page is clearing its final bank verification. It will
+            live at this exact address, so bookmark it — and if you would like
+            to give before it opens, email us and we will take care of it right
+            away.
           </p>
           <div className="cta-row">
             <a className="btn" href={`mailto:${CONTACT_EMAIL}`}>

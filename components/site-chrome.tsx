@@ -8,8 +8,12 @@ export const CONTACT_EMAIL = "nsfwcs3@gmail.com";
  * Copy Link. Anedot recommends the hosted page over the iframe embed: the
  * embedded version drops Apple Pay, Google Pay and PayPal and converts worse.
  *
- * EMPTY until the Anedot account clears (signed up 2026-08-01, 1-5 business
- * days). While it is empty every donate control disappears and /donate serves
+ * EMPTY until the Anedot account clears. Signed up 2026-08-01; Noah finished
+ * the setup 2026-08-09 and it is now waiting on bank (micro-deposit)
+ * verification, which is the step with no fixed date — do not put an estimate
+ * of it into user-facing copy.
+ *
+ * While it is empty every donate control disappears and /donate serves
  * a holding page instead of forwarding — so nothing on the live site points at
  * a payment form that does not exist yet. Paste the URL here and redeploy and
  * the whole flow turns on at once.
