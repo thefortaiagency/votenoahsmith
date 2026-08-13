@@ -153,7 +153,7 @@ export default function AccomplishmentsPage() {
         <div className="shell">
           <Rule />
           <div className="section-head">
-            <div className="kicker">Marquee wins</div>
+            <div className="kicker">Lasting impact</div>
             <h2>The work that reaches every student</h2>
           </div>
           <div className="cards">
