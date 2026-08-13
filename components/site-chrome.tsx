@@ -161,9 +161,9 @@ export function PrimaryCta({ source }: { source?: string } = {}) {
     );
   }
   return (
-    <a className="btn" href={`mailto:${CONTACT_EMAIL}`}>
+    <Link className="btn" href="/join">
       Join the Campaign
-    </a>
+    </Link>
   );
 }
 
@@ -174,9 +174,9 @@ export function PrimaryCta({ source }: { source?: string } = {}) {
 export function JoinCta() {
   if (!DONATE_URL) return null;
   return (
-    <a className="btn btn-ghost" href={`mailto:${CONTACT_EMAIL}`}>
+    <Link className="btn btn-ghost" href="/join">
       Join the Campaign
-    </a>
+    </Link>
   );
 }
 
@@ -192,9 +192,7 @@ export function SiteHeader() {
           <Link href="/">Meet the Candidate</Link>
           <Link href="/accomplishments">Accomplishments</Link>
           <Link href="/snider">Snider Stadium</Link>
-          {DONATE_URL ? (
-            <a href={`mailto:${CONTACT_EMAIL}`}>Join the Campaign</a>
-          ) : null}
+          {DONATE_URL ? <Link href="/join">Join the Campaign</Link> : null}
           <PrimaryCta source="nav" />
         </nav>
       </div>
