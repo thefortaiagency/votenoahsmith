@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     "Noah Smith's record on the Fort Wayne Community Schools Board of School Trustees, 2021–2026: school safety, teacher pay, career pathways, capital projects, and fiscal discipline.",
 };
 
-const CYCLE = ["var(--green)", "var(--orange)", "var(--sand)", "var(--sky)"];
+const CYCLE = ["var(--green)", "var(--teal)", "var(--sand)", "var(--sky)"];
 
 const MARQUEE = [
   {

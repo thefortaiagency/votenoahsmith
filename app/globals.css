@@ -1,25 +1,34 @@
 /* ---------------------------------------------------------------
    Friends of Noah Smith — design tokens
-   Palette sampled directly from the FWCS "We Are Your Schools" mark.
+
+   TEST PALETTE (branch `color-test`, 2026-08-13) — two brand colors from
+   Noah: blue #006db6 and yellow #edeb3f. The token NAMES are deliberately
+   left alone so every existing rule keeps working; only the values move.
+   Supporting tones are all derived from the blue, so the page never
+   introduces a hue outside those two.
+
+   Contrast, checked: white on blue 5.44:1 · yellow eyebrow on the hero
+   5.70:1 · near-black on the yellow button 12.51:1. Yellow is only ever a
+   FILL or a mark on dark — at 1.27:1 it is invisible as text on white.
    --------------------------------------------------------------- */
 
 :root {
-  /* the mark's five colors */
-  --teal: #3b7389;
-  --sky: #58b7dd;
-  --green: #a0cf67;
-  --sand: #9b8579;
-  --orange: #f7941d;
+  /* the two brand colors */
+  --teal: #006db6; /* the blue — ground: nav, hero, bands */
+  --sky: #6cc0f2; /* blue lightened — links and accents on dark */
+  --green: #edeb3f; /* the yellow — eyebrows on dark, accent bars */
+  --sand: #7c96ad; /* blue muted to slate — the quiet fourth accent */
+  --orange: #edeb3f; /* the yellow — call-to-action fills */
 
-  /* teal, taken darker for text-bearing surfaces (contrast) */
-  --teal-deep: #2a5566;
-  --teal-ink: #1b3a47;
+  /* blue, taken darker for text-bearing surfaces (contrast) */
+  --teal-deep: #005a96;
+  --teal-ink: #00456f;
 
-  --ink: #16323d;
-  --muted: #55707d;
-  --line: #dbe6ea;
+  --ink: #062c45;
+  --muted: #53687d;
+  --line: #d8e4ee;
   --paper: #ffffff;
-  --wash: #f4f8f9;
+  --wash: #f2f7fb;
 
   --shell: 1120px;
   --radius: 14px;
@@ -86,7 +95,7 @@ img {
   background: var(--green);
 }
 .panels span:nth-child(2) {
-  background: var(--orange);
+  background: var(--teal);
 }
 .panels span:nth-child(3) {
   background: var(--sand);
@@ -109,7 +118,7 @@ img {
   background: var(--green);
 }
 .rule span:nth-child(2) {
-  background: var(--orange);
+  background: var(--teal);
 }
 .rule span:nth-child(3) {
   background: var(--sand);
@@ -179,7 +188,7 @@ img {
 .btn {
   display: inline-block;
   background: var(--orange);
-  color: #21160a;
+  color: #10233a;
   font-weight: 800;
   font-size: 15px;
   text-decoration: none;
@@ -188,8 +197,8 @@ img {
   border: 2px solid var(--orange);
 }
 .btn:hover {
-  background: #ffa63c;
-  border-color: #ffa63c;
+  background: #f6f472;
+  border-color: #f6f472;
 }
 .btn-ghost {
   background: transparent;
@@ -228,7 +237,7 @@ img {
 }
 .hero h1 em {
   font-style: normal;
-  color: var(--sky);
+  color: var(--green);
 }
 .hero .lede {
   font-size: clamp(17px, 2vw, 21px);
@@ -549,7 +558,7 @@ section.tint {
 a.chip:hover {
   background: var(--orange);
   border-color: var(--orange);
-  color: #21160a;
+  color: #10233a;
 }
 .chip-other {
   font-size: 17px;
