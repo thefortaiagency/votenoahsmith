@@ -107,6 +107,22 @@ export default function Home() {
         <div className="shell">
           <Rule />
           <div className="section-head">
+            <div className="kicker">Donate</div>
+            <h2>Help keep this work going</h2>
+            <p>
+              School board races are won on the ground — yard signs, literature
+              at doors, and showing up at every forum in the district.
+            </p>
+          </div>
+          <AmountLadder source="home" />
+          <GivingDisclaimer />
+        </div>
+      </section>
+
+      <section className="tint">
+        <div className="shell">
+          <Rule />
+          <div className="section-head">
             <div className="kicker">The candidate</div>
             <h2>A product of the schools he now leads</h2>
           </div>
@@ -128,7 +144,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="tint">
+      <section>
         <div className="shell">
           <Rule />
           <div className="section-head">
@@ -169,7 +185,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section>
+      <section className="tint">
         <div className="shell">
           <Rule />
           <div className="section-head">
@@ -188,7 +204,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="tint">
+      <section>
         <div className="shell">
           <Rule />
           <div className="section-head">
@@ -213,22 +229,6 @@ export default function Home() {
               </p>
             </article>
           </div>
-        </div>
-      </section>
-
-      <section>
-        <div className="shell">
-          <Rule />
-          <div className="section-head">
-            <div className="kicker">Chip in</div>
-            <h2>Help keep this work going</h2>
-            <p>
-              School board races are won on the ground — yard signs, literature
-              at doors, and showing up at every forum in the district.
-            </p>
-          </div>
-          <AmountLadder source="home" />
-          <GivingDisclaimer />
         </div>
       </section>
 
