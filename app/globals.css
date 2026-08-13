@@ -796,3 +796,9 @@ a.chip:hover {
     grid-template-columns: 1fr;
   }
 }
+/* Caption and its required/optional tag share one line; the input drops below. */
+.signup .lbl {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}

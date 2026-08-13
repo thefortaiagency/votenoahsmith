@@ -104,22 +104,24 @@ export function SignupForm() {
 
       <div className="signup-row">
         <label>
-          First name
+          <span className="lbl">First name</span>
           <input name="first" autoComplete="given-name" required />
         </label>
         <label>
-          Last name
+          <span className="lbl">Last name</span>
           <input name="last" autoComplete="family-name" required />
         </label>
       </div>
 
       <div className="signup-row">
         <label>
-          Email <span className="req">required</span>
+          <span className="lbl">
+            Email <span className="req">required</span>
+          </span>
           <input name="email" type="email" autoComplete="email" required />
         </label>
         <label>
-          ZIP code
+          <span className="lbl">ZIP code</span>
           <input
             name="zip"
             inputMode="numeric"
@@ -130,7 +132,9 @@ export function SignupForm() {
       </div>
 
       <label>
-        Mobile number <span className="opt">optional</span>
+        <span className="lbl">
+          Mobile number <span className="opt">optional</span>
+        </span>
         <input name="phone" type="tel" autoComplete="tel" placeholder="260-555-0147" />
       </label>
 
@@ -145,7 +149,10 @@ export function SignupForm() {
       </label>
 
       <label>
-        Anything you&rsquo;d like us to know? <span className="opt">optional</span>
+        <span className="lbl">
+          Anything you&rsquo;d like us to know?{" "}
+          <span className="opt">optional</span>
+        </span>
         <textarea name="note" rows={3} placeholder="I can host a yard sign…" />
       </label>
 
