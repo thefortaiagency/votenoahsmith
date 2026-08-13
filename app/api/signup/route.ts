@@ -75,8 +75,15 @@ export async function POST(req: Request) {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(record),
+      // Apps Script answers a successful doPost with a 302 pointing at a
+      // one-time result page on googleusercontent.com. The row has ALREADY
+      // been written by the time that redirect is issued, and chasing it is
+      // unreliable — the hop drops the POST method and the result URL often
+      // 404s or 405s. So stop at the redirect and treat 3xx as success.
+      redirect: "manual",
     });
-    if (!res.ok) throw new Error(`endpoint returned ${res.status}`);
+    const wrote = res.ok || (res.status >= 300 && res.status < 400);
+    if (!wrote) throw new Error(`endpoint returned ${res.status}`);
     return NextResponse.json({ ok: true });
   } catch (err) {
     console.error("signup forward failed", err);
