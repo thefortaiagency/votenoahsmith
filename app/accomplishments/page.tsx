@@ -53,7 +53,6 @@ const PROGRAMS = [
   "Pearl Arts Innovation Institute — a music-industry entrepreneurship half-day program with Pearl Street Arts Center (2025).",
   "Fort Wayne Philharmonic partnership — Club-O and Kid-O music programming in every elementary school.",
   "STEM expansion — Arlington named a Project Lead The Way STEM school; new STEM labs at Jefferson and Arlington (2025).",
-  "A new north-side Montessori school, planned in 2025.",
   "GEAR UP — the federal college-access program, brought to FWCS students.",
   "Naviance college and career readiness platform — three-year renewal, $187,000 (2025).",
   "Defined Learning — district-wide project-based learning platform, $401,000.",
