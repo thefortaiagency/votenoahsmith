@@ -154,7 +154,7 @@ export default function AccomplishmentsPage() {
           <Rule />
           <div className="section-head">
             <div className="kicker">Marquee wins</div>
-            <h2>The seven that mattered most</h2>
+            <h2>The work that reaches every student</h2>
           </div>
           <div className="cards">
             {MARQUEE.map((m, i) => (
