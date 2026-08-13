@@ -200,6 +200,13 @@ img {
   background: #f6f472;
   border-color: #f6f472;
 }
+/* `.masthead nav a` is more specific than `.btn`, so without this the header
+   CTA's label inherits the pale nav-link color and lands at 1.27:1 on the
+   yellow fill — effectively invisible. Pin the dark label back (12.51:1). */
+.masthead nav a.btn,
+.masthead nav a.btn:hover {
+  color: #10233a;
+}
 .btn-ghost {
   background: transparent;
   color: #fff;
