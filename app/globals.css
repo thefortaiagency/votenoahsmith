@@ -12,6 +12,42 @@
    FILL or a mark on dark — at 1.27:1 it is invisible as text on white.
    --------------------------------------------------------------- */
 
+/* Libre Franklin, self-hosted. Pinned 2026-08-13 so the site renders the same
+   typeface as the printed signs. Previously the site used a system stack, which
+   meant SF Pro on Apple, Segoe UI on Windows, Roboto on Android — neither
+   consistent between devices nor licensable for print. Libre Franklin is SIL
+   OFL, so the same font is legal on signs, mailers and apparel.
+   Self-hosted rather than loaded from Google: no third-party request, and the
+   campaign site does not hand visitor IPs to another party. 64 KB total. */
+@font-face {
+  font-family: "Libre Franklin";
+  src: url("/fonts/LibreFranklin-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Libre Franklin";
+  src: url("/fonts/LibreFranklin-600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Libre Franklin";
+  src: url("/fonts/LibreFranklin-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Libre Franklin";
+  src: url("/fonts/LibreFranklin-800.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* the two brand colors */
   --teal: #006db6; /* the blue — ground: nav, hero, bands */
@@ -46,8 +82,10 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
+  /* fallbacks kept: if the woff2 fails to load the page degrades to exactly
+     what it rendered before, rather than to a serif */
+  font-family: "Libre Franklin", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 17px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
