@@ -167,7 +167,7 @@ export default function Home() {
               <h3>Not an observer — a graduate</h3>
               <p>
                 Noah didn&rsquo;t move to Fort Wayne to serve on its school
-                board. He grew up in it, graduated from it, and is raising his
+                board. He grew up in it, graduated from it, and raised his
                 family in it — with three daughters who came up through FWCS
                 schools.
               </p>
