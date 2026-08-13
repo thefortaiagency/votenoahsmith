@@ -211,8 +211,8 @@ export default function SniderPage() {
             <p style={{ fontSize: 20, fontWeight: 500 }}>
               &ldquo;I walked Snider&rsquo;s halls. My daughters graduated as
               Panthers. So bringing this stadium home — as a proud alum and a
-              member of the board that made it happen — means more to me than
-              almost anything we&rsquo;ve done. Fifty-four years is a long wait.
+              member of the board that made it happen — is personal. Fifty-four
+              years is a long wait.
               Welcome home, Panthers.&rdquo;
             </p>
             <cite>
