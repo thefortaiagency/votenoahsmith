@@ -271,6 +271,11 @@ img {
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
   display: block;
   width: 100%;
+  /* The <img> carries height="769". Without this, that attribute holds the
+     height fixed while width:100% shrinks the box — squashing Noah's face
+     horizontally (to 0.42 aspect on a 390px phone against a 0.67 original).
+     height:auto lets the browser derive height from the real aspect ratio. */
+  height: auto;
 }
 
 /* ---------------- stat strip ---------------- */
