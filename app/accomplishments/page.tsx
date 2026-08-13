@@ -77,7 +77,7 @@ const FACILITIES = [
   "District radio and communications tower upgrade — $399,000 for school safety.",
   "South Side Athletic Annex parking expansion — $683,000.",
   "Ongoing bus-fleet replacement — new buses added every year.",
-  "Snider High School stadium — the $30 million, 4,500-seat home field, 54 years in the making.",
+  "Snider High School stadium — the $22.5 million, 4,500-seat home field, 54 years in the making, as part of a $55 million athletics and facilities bond issuance.",
 ];
 
 const FISCAL = [

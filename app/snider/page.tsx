@@ -4,14 +4,14 @@ import { JoinCta, PrimaryCta, Rule } from "@/components/site-chrome";
 export const metadata: Metadata = {
   title: "Snider Stadium — Home At Last",
   description:
-    "After 54 years, Snider's Panthers finally have a home field. The $30 million, 4,500-seat stadium opens Friday, August 28, 2026.",
+    "After 54 years, Snider's Panthers finally have a home field. The $22.5 million, 4,500-seat stadium opens Friday, August 28, 2026.",
 };
 
 const VIDEO_URL = "https://www.facebook.com/share/v/1Bevxs9fTV/?mibextid=wwXIfr";
 
 const STATS = [
   { c: "var(--green)", n: "54", l: "Years waiting" },
-  { c: "var(--orange)", n: "$30M", l: "Investment" },
+  { c: "var(--orange)", n: "$22.5M", l: "Investment" },
   { c: "var(--sand)", n: "4,500", l: "Seats" },
   { c: "var(--sky)", n: "Aug 28", l: "First home game, 2026" },
 ];
@@ -60,7 +60,7 @@ const HISTORY = [
     c: "var(--green)",
     when: "2023",
     title: "The board commits",
-    body: "Fort Wayne Community Schools approves the $30 million stadium project — a long-overdue investment in Snider.",
+    body: "Fort Wayne Community Schools approves the $22.5 million stadium project — a long-overdue investment in Snider.",
   },
   {
     c: "var(--sky)",
@@ -143,7 +143,7 @@ export default function SniderPage() {
               <cite>— Dr. Mark Daniel, FWCS Superintendent</cite>
             </div>
             <p>
-              Now it&rsquo;s real: a $30 million, 4,500-seat, multi-use stadium
+              Now it&rsquo;s real: a $22.5 million, 4,500-seat, multi-use stadium
               on Snider&rsquo;s own campus — and on{" "}
               <strong>Friday, August 28, 2026</strong>, the Panthers host their
               first true home game.
