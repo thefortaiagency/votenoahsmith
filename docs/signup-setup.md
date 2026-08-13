@@ -14,29 +14,31 @@ No third-party processor, no monthly fee, no API key in the repo, and the data
 stays in Noah's own Drive. Ten minutes, once.
 
 1. Create a new Google Sheet, e.g. **"Campaign signups"**. Sign in as
-   `nsfwcs3@gmail.com`, not the BOD Financial account — campaign data should not
-   live under a business login.
-2. Put these headers in row 1, in this order:
+   `nsfwcs3@gmail.com`, not the BOD Financial account — a supporter list is a
+   campaign record and should not sit in a business Workspace account.
 
-   `submittedAt` · `first` · `last` · `email` · `phone` · `smsConsent` · `zip` · `note` · `source`
-
-3. **Extensions → Apps Script**. Delete whatever is there and paste:
+2. **Extensions → Apps Script**. Delete whatever is there and paste this. It
+   writes its own header row the first time it runs, so there is nothing to
+   type into the Sheet:
 
    ```javascript
    function doPost(e) {
      var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+     if (sheet.getLastRow() === 0) {
+       sheet.appendRow(['submittedAt','first','last','email','phone',
+                        'smsConsent','zip','note','source']);
+       sheet.setFrozenRows(1);
+     }
      var d = JSON.parse(e.postData.contents);
-     sheet.appendRow([
-       d.submittedAt, d.first, d.last, d.email,
-       d.phone, d.smsConsent, d.zip, d.note, d.source
-     ]);
+     sheet.appendRow([d.submittedAt, d.first, d.last, d.email,
+                      d.phone, d.smsConsent, d.zip, d.note, d.source]);
      return ContentService
        .createTextOutput(JSON.stringify({ ok: true }))
        .setMimeType(ContentService.MimeType.JSON);
    }
    ```
 
-4. **Deploy → New deployment → Web app.**
+3. **Deploy → New deployment → Web app.**
    - Execute as: **Me**
    - Who has access: **Anyone**
 
@@ -44,20 +46,20 @@ stays in Noah's own Drive. Ten minutes, once.
    unguessable and the script only ever appends a row; it returns nothing and
    reads nothing.
 
-5. Copy the deployment URL. It looks like
+4. Copy the deployment URL. It looks like
    `https://script.google.com/macros/s/AKfy…/exec`.
 
-6. In **Vercel → the votenoahsmith project → Settings → Environment Variables**,
+5. In **Vercel → the votenoahsmith project → Settings → Environment Variables**,
    add:
 
    | Name | Value |
    |---|---|
-   | `SIGNUP_ENDPOINT` | the `/exec` URL from step 5 |
+   | `SIGNUP_ENDPOINT` | the `/exec` URL from step 4 |
 
    Then **redeploy** (Deployments → ⋯ → Redeploy). Environment variables are
    read at build time, so an existing deployment will not pick it up.
 
-7. Submit the form once at <https://votenoahsmith.com/join> and confirm a row
+6. Submit the form once at <https://votenoahsmith.com/join> and confirm a row
    lands in the Sheet.
 
 ## What gets captured
