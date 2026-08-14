@@ -52,8 +52,28 @@ export async function POST(req: Request) {
     );
   }
 
+  // Fort Wayne local time, not UTC. An ISO timestamp reads four hours ahead
+  // here and rolls the DATE over at 8pm, which would quietly misdate every
+  // evening signup in the campaign's own records. Format sorts correctly as
+  // text in Sheets and is readable without conversion.
+  const now = new Date();
+  const p = Object.fromEntries(
+    new Intl.DateTimeFormat("en-CA", {
+      timeZone: "America/New_York",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: false,
+    })
+      .formatToParts(now)
+      .map((x) => [x.type, x.value]),
+  );
+
   const record = {
-    submittedAt: new Date().toISOString(),
+    submittedAt: `${p.year}-${p.month}-${p.day} ${p.hour}:${p.minute}:${p.second}`,
     first: clean(body.first, 80),
     last: clean(body.last, 80),
     email,
