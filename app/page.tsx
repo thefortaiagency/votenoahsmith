@@ -35,9 +35,9 @@ const SERVICE = [
   },
   {
     c: "var(--sky)",
-    when: "January 2025",
+    when: "June 2024",
     title: "Elected Board Vice President",
-    body: "Trusted by his peers with broader organizational and leadership responsibility.",
+    body: "Elevated by his fellow trustees mid-term when the vice presidency came open, after two years as Board Secretary.",
   },
   {
     c: "var(--green)",
