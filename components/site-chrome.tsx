@@ -8,10 +8,16 @@ export const CONTACT_EMAIL = "nsfwcs3@gmail.com";
  * Copy Link. Anedot recommends the hosted page over the iframe embed: the
  * embedded version drops Apple Pay, Google Pay and PayPal and converts worse.
  *
- * EMPTY until the Anedot account clears. Signed up 2026-08-01; Noah finished
- * the setup 2026-08-09 and it is now waiting on bank (micro-deposit)
- * verification, which is the step with no fixed date — do not put an estimate
- * of it into user-facing copy.
+ * EMPTY only because the PAGE has not been built yet.
+ *
+ * Corrected 2026-08-19 from Anedot's own emails in Noah's inbox: the account
+ * "has been verified and is now active" as of 2026-08-03 1:51pm ET, and the
+ * bank account (First Federal Savings Bank *8888) was created 2026-08-01.
+ * The earlier note here — "waiting on bank (micro-deposit) verification" — was
+ * wrong, and so was the later "application still under review": both came from
+ * a stale status page rather than the account state. Nothing is pending on
+ * Anedot's side. The one remaining step is human: build the donation page in
+ * Action Pages > All Pages > + New Page and copy its Share URL.
  *
  * While it is empty every donate control disappears and /donate serves
  * a holding page instead of forwarding — so nothing on the live site points at
