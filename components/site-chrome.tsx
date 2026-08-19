@@ -8,16 +8,14 @@ export const CONTACT_EMAIL = "nsfwcs3@gmail.com";
  * Copy Link. Anedot recommends the hosted page over the iframe embed: the
  * embedded version drops Apple Pay, Google Pay and PayPal and converts worse.
  *
- * EMPTY only because the PAGE has not been built yet.
+ * LIVE since 2026-08-19. Verified `LIVE` by `tools/anedot-watch`/
+ * `tools/check-anedot-url` before being pasted here, not assumed.
  *
- * Corrected 2026-08-19 from Anedot's own emails in Noah's inbox: the account
- * "has been verified and is now active" as of 2026-08-03 1:51pm ET, and the
- * bank account (First Federal Savings Bank *8888) was created 2026-08-01.
- * The earlier note here — "waiting on bank (micro-deposit) verification" — was
- * wrong, and so was the later "application still under review": both came from
- * a stale status page rather than the account state. Nothing is pending on
- * Anedot's side. The one remaining step is human: build the donation page in
- * Action Pages > All Pages > + New Page and copy its Share URL.
+ * The address is `/noah-smith/donate`, NOT the `/friends-of-noah-smith-<uuid>/`
+ * form the builder and its QR code hand out — that one 404s. Anedot support set
+ * the short account slug on 2026-08-19 after the page sat unreachable for 16
+ * days while the dashboard reported it "Active". If giving ever 404s again,
+ * suspect the account slug first and re-run tools/check-anedot-url.
  *
  * While it is empty every donate control disappears and /donate serves
  * a holding page instead of forwarding — so nothing on the live site points at
@@ -26,7 +24,7 @@ export const CONTACT_EMAIL = "nsfwcs3@gmail.com";
  */
 // Annotated `string` deliberately: without it TypeScript narrows the empty
 // literal to `never` inside the not-yet-live branches and the build fails.
-export const DONATE_URL: string = "";
+export const DONATE_URL: string = "https://secure.anedot.com/noah-smith/donate";
 
 /** The clean, printable address. Forwards to Anedot once DONATE_URL is set. */
 export const DONATE_PATH = "/donate";
