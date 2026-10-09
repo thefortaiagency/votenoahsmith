@@ -802,3 +802,119 @@ a.chip:hover {
   align-items: baseline;
   gap: 8px;
 }
+
+/* ---------------- news: photo gallery ----------------
+   A masonry-ish grid that does not need JavaScript. The photographs are a mix
+   of portrait and landscape phone shots, so the cells are square-ish and the
+   images cover them: a fixed aspect-ratio keeps the grid from going ragged,
+   and object-fit stops a 3:4 shot being squashed into a 4:3 hole.
+
+   The height attribute on each <img> is the real pixel height, so the browser
+   reserves the right box before the file arrives and the caption underneath
+   does not jump down the page as photos load. aspect-ratio then overrides it
+   for display — the attribute is there for the reservation, not the layout. */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+  margin-top: 34px;
+}
+.gallery figure {
+  margin: 0;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.gallery img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  background: var(--wash);
+}
+.gallery figcaption {
+  padding: 14px 18px 18px;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--muted);
+  border-top: 3px solid var(--sky);
+}
+
+/* ---------------- news: index list ---------------- */
+
+.post-list {
+  display: grid;
+  gap: 24px;
+  margin-top: 34px;
+}
+.post-card {
+  display: grid;
+  grid-template-columns: minmax(0, 320px) 1fr;
+  gap: 0;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.post-thumb {
+  display: block;
+  background: var(--wash);
+}
+.post-thumb img {
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+.post-body {
+  padding: 26px 30px;
+  border-left: 6px solid var(--green);
+}
+.post-body time {
+  display: block;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.post-body h2 {
+  font-size: clamp(22px, 2.6vw, 29px);
+  line-height: 1.2;
+}
+.post-body h2 a {
+  color: var(--teal-ink);
+  text-decoration: none;
+}
+.post-body h2 a:hover {
+  text-decoration: underline;
+}
+.post-body p {
+  margin-top: 10px;
+  color: #2c4a57;
+}
+.post-more {
+  display: inline-block;
+  margin-top: 14px;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+@media (max-width: 760px) {
+  .post-card {
+    grid-template-columns: 1fr;
+  }
+  .post-body {
+    border-left: none;
+    border-top: 6px solid var(--green);
+  }
+}

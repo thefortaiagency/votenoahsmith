@@ -196,6 +196,7 @@ export function SiteHeader() {
           <Link href="/">Meet the Candidate</Link>
           <Link href="/accomplishments">Accomplishments</Link>
           <Link href="/snider">Snider Stadium</Link>
+          <Link href="/news">Updates</Link>
           {DONATE_URL ? <Link href="/join">Join the Campaign</Link> : null}
           <PrimaryCta source="nav" />
         </nav>
@@ -222,6 +223,7 @@ export function SiteFooter() {
             <Link href="/">Meet the Candidate</Link>
             <Link href="/accomplishments">Accomplishments</Link>
             <Link href="/snider">Snider Stadium</Link>
+            <Link href="/news">Updates</Link>
             {DONATE_URL ? <Link href={DONATE_PATH}>Donate</Link> : null}
           </nav>
         </div>
