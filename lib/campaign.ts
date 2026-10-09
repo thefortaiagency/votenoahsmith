@@ -49,3 +49,26 @@ export const SERVICE_RECORD = [
   { date: "2026-01", title: "Elected Board President" },
   { date: "2026-05", title: "Moved to the At-Large seat" },
 ] as const
+
+/**
+ * Snider Stadium — the figures, stated once.
+ *
+ * ⛔ THE COST IS $22.5 MILLION. Locked by Noah on 2026-10-09 ("hard stop").
+ *
+ * This constant exists because the site contradicted itself: public/llms.txt
+ * said $30 million while app/snider/page.tsx said $22.5 million in four
+ * places. llms.txt is the file whose entire purpose is to be quoted back by
+ * assistants, so that was the worst of the two places to carry a wrong number
+ * — and nobody reads llms.txt by eye, which is why it sat there.
+ *
+ * Anything on the site that states the cost reads it from here. llms.txt is a
+ * static file and cannot import, so it carries a pointer back to this comment
+ * instead; if you change the figure, change it there too.
+ */
+export const SNIDER_STADIUM = {
+  cost: "$22.5 million",
+  costShort: "$22.5M",
+  seats: "4,500",
+  yearsWaiting: "54",
+  openingDateHuman: "Friday, August 28, 2026",
+} as const

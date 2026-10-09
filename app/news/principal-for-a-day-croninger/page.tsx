@@ -28,10 +28,18 @@ export const metadata: Metadata = {
  * Noah's own account of his morning and can say so; a caption sits directly
  * beneath an image and is read as a description of it.
  *
- * Three further photographs from the same morning are close-up portraits of
- * individual students. They are deliberately NOT in this repository — see the
- * note in the commit message. Files in /public are served to anyone who asks
- * for the URL, so "added but not displayed" would not have held them back.
+ * at-the-mics.jpg carries a BLURRED STUDENT ID BADGE. Noah cleared the
+ * photograph on 2026-10-09 on condition the badge went; the original showed
+ * her school portrait and "Croninger Elementary" legibly. It was destroyed by
+ * pixelation before blurring (tools/blur-region.py) because a Gaussian blur
+ * alone is reversible. Do not re-derive this file from the original by hand —
+ * the cleared master is kept at
+ * ~/noah-workspace/staging/croninger-held/announcements-BADGE-BLURRED.jpg.
+ *
+ * Two further photographs from the same morning are close-up portraits of
+ * individual students and are deliberately NOT in this repository. Files in
+ * /public are served to anyone who asks for the URL, so "added but not
+ * displayed" would not have held them back.
  */
 const GALLERY = [
   {
@@ -56,6 +64,14 @@ const GALLERY = [
     h: 1050,
     alt: "A Croninger Elementary classroom early in the morning, students moving between desks and cubbies as the day gets started.",
     caption: "A classroom getting itself going for the day.",
+  },
+  {
+    src: "/news/croninger-2026-10-08/at-the-mics.jpg",
+    w: 1400,
+    h: 1050,
+    alt: "Noah Smith and a Croninger Elementary student in a Crusaders polo, both grinning behind two studio microphones on boom arms.",
+    caption:
+      "On the microphones with a Croninger Crusader, 9:11 a.m.",
   },
   {
     src: "/news/croninger-2026-10-08/candy-monster.jpg",

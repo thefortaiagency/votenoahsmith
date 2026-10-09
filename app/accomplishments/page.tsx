@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { JoinCta, PrimaryCta, Rule } from "@/components/site-chrome";
+import { SNIDER_STADIUM } from "@/lib/campaign";
 
 export const metadata: Metadata = {
   title: "Accomplishments",
@@ -76,7 +77,7 @@ const FACILITIES = [
   "District radio and communications tower upgrade — $399,000 for school safety.",
   "South Side Athletic Annex parking expansion — $683,000.",
   "Ongoing bus-fleet replacement — new buses added every year.",
-  "Snider High School stadium — the $22.5 million, 4,500-seat home field, 54 years in the making, as part of a $55 million athletics and facilities bond issuance.",
+  `Snider High School stadium — the ${SNIDER_STADIUM.cost}, ${SNIDER_STADIUM.seats}-seat home field, ${SNIDER_STADIUM.yearsWaiting} years in the making, as part of a $55 million athletics and facilities bond issuance.`,
 ];
 
 const FISCAL = [
